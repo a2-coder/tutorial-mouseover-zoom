@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="w-screen h-screen bg-gradient-to-tr from-indigo-200 to-indigo-50 relative">
       <div className="grid grid-cols-12 gap-6 h-full">
-        <div className="col-span-12 md:col-span-6 px-12 flex items-center relative">
+        <div className="col-span-12 md:col-span-6 px-12 md:px-24 flex items-center relative">
           {/* SVG PARTICLES */}
           <div className="absolute top-12 right-12 z-[5]">
             <svg
