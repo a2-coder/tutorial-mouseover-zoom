@@ -1,4 +1,6 @@
 import profileSrc from "./assets/profile.png";
+import GithubIcon from "./icons/Github";
+import MediumIcon from "./icons/Medium";
 
 function App() {
   return (
@@ -42,7 +44,7 @@ function App() {
                 Mouse-Over Zoom Effect
               </h1>
             </div>
-            <div className="rounded-full bg-gray-50 py-2 pl-2 pr-4 flex items-center space-x-2 border border-indigo-200">
+            <a href="https://www.instagram.com/a2.coder/" className="cursor-pointer rounded-full bg-gray-50 hover:bg-indigo-50 py-2 pl-2 pr-4 flex items-center space-x-2 border border-indigo-200 hover:border-indigo-300 transition ease-in-out duration-500">
               <img
                 src={profileSrc}
                 alt="a2.coder"
@@ -51,6 +53,14 @@ function App() {
               <div className="text-lg font-semibold text-gray-800">
                 a2.coder
               </div>
+            </a>
+            <div className="flex items-center space-x-4">
+              <a href="https://github.com/a2-coder/tutorial-mouseover-zoom" className="text-indigo-400 hover:text-gray-800 transition duration-500 ease-in-out">
+                <GithubIcon className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-indigo-400 hover:text-gray-800 transition duration-500 ease-in-out">
+                <MediumIcon className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>
