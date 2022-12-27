@@ -2,8 +2,17 @@ import profileSrc from "./assets/profile.png";
 import GithubIcon from "./icons/Github";
 import MediumIcon from "./icons/Medium";
 import image from "./assets/image.jpg";
+import { useRef } from "react";
+import { useMouseOverZoom } from "./hooks";
 
 function App() {
+
+  const source = useRef<HTMLImageElement>(null);
+  const target = useRef<HTMLCanvasElement>(null);
+
+  // call the custom hook
+  useMouseOverZoom(source, target);
+
   return (
     <div className="w-screen h-screen bg-gradient-to-tr from-indigo-200 to-indigo-50 relative">
       <div className="grid grid-cols-12 gap-6 h-full">
@@ -66,8 +75,8 @@ function App() {
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-9 border-t-8 md:border-t-0 md:border-l-8 border-indigo-500 relative z-10">
-          <img src={image} className="w-full h-full bg-gray-100 cursor-crosshair object-cover" />
-          <canvas className="absolute pointer-events-none bottom-full translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 md:bottom-16 md:-left-16 border-8 border-indigo-500 w-32 h-32 z-10 bg-gray-200" />{" "}
+          <img ref={source} src={image} className="w-full h-full bg-gray-100 cursor-crosshair object-cover" />
+          <canvas ref={target} className="absolute pointer-events-none bottom-full translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 md:bottom-16 md:-left-16 border-8 border-indigo-500 w-32 h-32 z-10 bg-gray-200" />{" "}
         </div>
       </div>
     </div>
