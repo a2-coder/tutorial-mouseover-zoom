@@ -50,4 +50,25 @@ export function useMouseOverZoom(
       cursor.current.style.height = `${height}px`;
     }
   }, [zoomBounds]);
+  // draw the zoomed image on the canvas
+  useEffect(() => {
+    if (source.current && target.current) {
+      const { left, top, width, height } = zoomBounds;
+      const ctx = target.current.getContext("2d");
+      const imageRatio = source.current.naturalWidth / source.current.width;
+      if (ctx) {
+        ctx.drawImage(
+          source.current,
+          left * imageRatio,
+          top * imageRatio,
+          width * imageRatio,
+          height * imageRatio,
+          0,
+          0,
+          target.current.width,
+          target.current.height
+        );
+      }
+    }
+  }, [zoomBounds])
 }

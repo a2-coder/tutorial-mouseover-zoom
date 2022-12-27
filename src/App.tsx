@@ -78,7 +78,7 @@ function App() {
         <div className="col-span-12 md:col-span-4 md:col-start-9 border-t-8 md:border-t-0 md:border-l-8 border-indigo-500 relative z-10">
           <img ref={source} src={image} className="w-full h-full bg-gray-100 cursor-crosshair object-cover" />
           <div ref={cursor} className="border border-sky-500 absolute pointer-events-none" />
-          <canvas ref={target} className="absolute pointer-events-none bottom-full translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 md:bottom-16 md:-left-16 border-8 border-indigo-500 w-32 h-32 z-10 bg-gray-200" />{" "}
+          <canvas ref={target} className="absolute pointer-events-none bottom-full translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 md:bottom-16 md:-left-48 border-8 border-indigo-500 w-64 h-64 z-10 bg-gray-200" />{" "}
         </div>
       </div>
     </div>
